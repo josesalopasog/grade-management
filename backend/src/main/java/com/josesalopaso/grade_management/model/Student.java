@@ -5,9 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data; // Si usas Lombok
-import lombok.NoArgsConstructor; // Si usas Lombok
-import lombok.AllArgsConstructor; // Si usas Lombok
+import jakarta.persistence.Transient;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "students")
@@ -26,4 +27,10 @@ public class Student {
     private int sqlScore;
     private int mathScore;
     private int englishScore;
+
+    @Transient
+    private double average;
+
+    @Transient
+    private int rank;
 }
