@@ -2,10 +2,10 @@ FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
-COPY backend/pom.xml .
-RUN mvn dependency:go-offline -B
+COPY pom.xml .
+COPY src src/
 
-COPY backend/src src/
+RUN mvn dependency:go-offline -B
 
 RUN mvn clean install -DskipTests -B
 
