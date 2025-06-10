@@ -10,7 +10,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Aplica la configuración CORS a todas las rutas de tu API
-                .allowedOrigins("http://localhost:5173") // *** Importante: Este es el origen de tu frontend de Vite ***
+                .allowedOrigins("http://localhost:5173","https://grade-management-cyberjs.netlify.app") // *** Importante: Este es el origen de tu frontend de Vite ***
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
                 .allowedHeaders("*") // Permite todos los encabezados
                 .allowCredentials(true); // Permite el envío de cookies o credenciales (si las usaras)
