@@ -1,29 +1,29 @@
 package com.josesalopaso.grade_management.model;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data; // Si usas Lombok
+import lombok.NoArgsConstructor; // Si usas Lombok
+import lombok.AllArgsConstructor; // Si usas Lombok
 
-@Data
 @Entity
 @Table(name = "students")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
 
-    @Id // Primary Key
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "student_id", nullable = false, unique = true)
     private String studentId;
 
-    @Column(name = "java_score", nullable = false)
     private int javaScore;
-
-    @Column(name = "sql_score", nullable = false)
     private int sqlScore;
-
-    @Column(name = "math_score", nullable = false)
     private int mathScore;
-
-    @Column(name = "english_score", nullable = false)
     private int englishScore;
 }
